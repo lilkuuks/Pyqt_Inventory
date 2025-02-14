@@ -127,6 +127,7 @@ class Ui_Dialog(QMainWindow):
         self.pushImport = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.pushImport.setObjectName("pushImport")
         self.horizontalLayout.addWidget(self.pushImport)
+        self.pushImport.clicked.connect(import_data)
 
         # Horizontal layout for search functionality (top-left)
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.Inventory)

@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QMessageBox
 
 def export_data():
 
-    print("Exported!!")
+    exported_bull = True
     messageBoxConfirmation()
 
 
