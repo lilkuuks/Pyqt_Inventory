@@ -8,8 +8,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from utils.export_func import *
 from utils.import_func import *
-from utils.delete_func import delete_item
-
 
 class Ui_Dialog(QMainWindow):
     def setupUi(self, MainWindow):
@@ -62,11 +60,82 @@ class Ui_Dialog(QMainWindow):
         self.add_item.setObjectName("Add item")
         self.tabWidget.addTab(self.add_item, "")
 
+        # Layout for the Add Item tab
+        self.add_item_layout = QtWidgets.QVBoxLayout(self.add_item)
+        self.add_item_layout.setObjectName("add_item_layout")
+
+        # Widgets for the Add Item tab
+
+        # Item Name
+        self.label_item_name = QtWidgets.QLabel(self.add_item)
+        self.label_item_name.setObjectName("label_item_name")
+        self.add_item_layout.addWidget(self.label_item_name)
+
+        self.lineEdit_item_name = QtWidgets.QLineEdit(self.add_item)
+        self.lineEdit_item_name.setObjectName("lineEdit_item_name")
+        self.add_item_layout.addWidget(self.lineEdit_item_name)
+
+        #Item Quantity
+        self.label_item_quantity = QtWidgets.QLabel(self.add_item)
+        self.label_item_quantity.setObjectName("label_item_quantity")
+        self.add_item_layout.addWidget(self.label_item_quantity)
+
+        self.lineEdit_item_quantity = QtWidgets.QLineEdit(self.add_item)
+        self.lineEdit_item_quantity.setObjectName("lineEdit_item_quantity")
+        self.add_item_layout.addWidget(self.lineEdit_item_quantity)
+
+        # Item Price
+        self.label_item_price = QtWidgets.QLabel(self.add_item)
+        self.label_item_price.setObjectName("label_item_price")
+        self.add_item_layout.addWidget(self.label_item_price)
+
+        self.lineEdit_item_price = QtWidgets.QLineEdit(self.add_item)
+        self.lineEdit_item_price.setObjectName("lineEdit_item_price")
+        self.add_item_layout.addWidget(self.lineEdit_item_price)
+
+        self.button_add_item = QtWidgets.QPushButton(self.add_item)
+        self.button_add_item.setObjectName("button_add_item")
+        self.add_item_layout.addWidget(self.button_add_item)
+
+        # Spacer to push widgets to the top
+        spacer = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.add_item_layout.addItem(spacer)
+
+        # Connect the Add Item button to a function
+        self.button_add_item.clicked.connect(self.add_item_to_database)
+
+
+
+
         #Delete_item tab setup
         #Delete item tab to tab widget
         self.delete_item = QtWidgets.QWidget()
         self.delete_item.setObjectName("delete_item")
         self.tabWidget.addTab(self.delete_item, "")
+
+        # Layout for the Delete Item tab
+        self.delete_item_layout = QtWidgets.QVBoxLayout(self.delete_item)
+        self.delete_item_layout.setObjectName("delete_item_layout")
+
+        # Widgets for the Delete Item tab
+        self.label_delete_item = QtWidgets.QLabel(self.delete_item)
+        self.label_delete_item.setObjectName("label_delete_item")
+        self.delete_item_layout.addWidget(self.label_delete_item)
+
+        self.lineEdit_delete_item = QtWidgets.QLineEdit(self.delete_item)
+        self.lineEdit_delete_item.setObjectName("lineEdit_delete_item")
+        self.delete_item_layout.addWidget(self.lineEdit_delete_item)
+
+        self.button_fetch_item = QtWidgets.QPushButton(self.delete_item)
+        self.button_fetch_item.setObjectName("button_fetch_item")
+        self.delete_item_layout.addWidget(self.button_fetch_item)
+
+        # Spacer to push widgets to the top
+        spacer_delete = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.delete_item_layout.addItem(spacer_delete)
+
+        # Connect the fetch button to a function
+        self.button_fetch_item.clicked.connect(self.fetch_item_for_deletion)
 
 
         # Table widget for displaying inventory data
@@ -209,7 +278,22 @@ class Ui_Dialog(QMainWindow):
 
 
             self.tabWidget.setTabText(self.tabWidget.indexOf(self.add_item), _translate("Dialog", "ADD ITEM"))
+
+            # Set text for widgets in the Add Item tab
+            self.label_item_name.setText(_translate("MainWindow", "Item Name:"))
+            self.label_item_quantity.setText(_translate("MainWindow", "Item Quantity:"))
+            self.label_item_price.setText(_translate("MainWindow", "Item Price:"))
+
+            self.button_add_item.setText(_translate("MainWindow", "Add Item"))
+
+
+
             self.tabWidget.setTabText(self.tabWidget.indexOf(self.delete_item), _translate("Dialog", "DELETE ITEM"))
+
+            # Set text for widgets in the Delete Item tab
+            self.label_delete_item.setText(_translate("MainWindow", "Enter Item ID to Delete:"))
+            self.button_fetch_item.setText(_translate("MainWindow", "Fetch Item"))
+
 
 
             self.title.setText(_translate("Dialog", "INVENTORY MANAGEMENT"))
@@ -238,36 +322,9 @@ class Ui_Dialog(QMainWindow):
                 for column_number, data in enumerate(row_data):
                     self.tableWidget.setItem(row_number, column_number, QtWidgets.QTableWidgetItem(str(data)))
 
-                    # # Create an "Update" button for each row
-                    # update_button = QtWidgets.QPushButton("Update")
-                    # update_button.clicked.connect(partial(self.update_row, row_number))
-                    # self.tableWidget.setCellWidget(row_number, 4, update_button)  # Add the button to the "Update" column
-
-                    # # Create a "Delete" button for each row
-                    # delete_button = QtWidgets.QPushButton("Delete")
-                    # delete_button.clicked.connect(lambda: delete_item(self, row_number))
-                    # self.tableWidget.setCellWidget(row_number, 5,
-                    #                                delete_button)  # Add the button to the "Delete" columnt co
         except Exception as e:
             QtWidgets.QMessageBox.critical(self, "Error", str(e))
 
-    # def delete_row(self, row):
-    #     """Delete the row from the table and database."""
-    #     # Remove the row from the table
-    #     self.tableWidget.removeRow(row)
-    #
-    #     # Get the ID of the item in the row to delete from the database
-    #     item_id = self.tableWidget.item(row, 0).text()
-    #
-    #     # Delete the row from the database
-    #     connection = sqlite3.connect("database/inventory.db")
-    #     cursor = connection.cursor()
-    #     query = "DELETE FROM products WHERE id = ?"
-    #     cursor.execute(query, (item_id,))
-    #     connection.commit()
-    #
-    #     # Refresh the table to reflect changes
-    #     self.load_data()
 
     def update_row(self, row):
         """Update the row's data in the table and database."""
@@ -288,6 +345,7 @@ class Ui_Dialog(QMainWindow):
         QtWidgets.QMessageBox.information(self, "Success", "Item Updated Successfully!")
         self.load_data()
 
+
     def save_update(self, product_id, name, category, price, stock, dialog):
         """Save the updated product data to the database."""
         connection = sqlite3.connect("database/inventory.db")
@@ -304,29 +362,6 @@ class Ui_Dialog(QMainWindow):
         # Close the update dialog and reload the data
         dialog.accept()
         self.load_data()
-
-
-
-
-
-    #
-    # def load_data(self):
-    #         """Load data from SQLite database and populate the table."""
-    #         connection = sqlite3.connect("database/inventory.db")
-    #         cursor = connection.cursor()
-    #
-    #         query = "SELECT * FROM products"
-    #         cursor.execute(query)
-    #         results = cursor.fetchall()
-    #
-    #         # Resetting the table and inserting new data
-    #         self.tableWidget.setRowCount(0)
-    #         for row_number, row_data in enumerate(results):
-    #             self.tableWidget.insertRow(row_number)
-    #             for column_number, data in enumerate(row_data):
-    #                 self.tableWidget.setItem(row_number,
-    #                                          column_number,
-    #                                          QtWidgets.QTableWidgetItem(str(data)))
 
 
 
@@ -359,6 +394,101 @@ class Ui_Dialog(QMainWindow):
                 self.tableWidget.setRowHidden(row, True)  # Hide row if either item is missing
 
 
+
+    def fetch_item_for_deletion(self):
+        """Fetch item data from the database and display it for confirmation."""
+        item_id = self.lineEdit_delete_item.text().strip()
+
+        if not item_id:
+            QtWidgets.QMessageBox.warning(self, "Input Error", "Please enter an item ID.")
+            return
+
+        conn = None
+        try:
+            conn = sqlite3.connect("./database/inventory.db")  # Ensure correct DB path
+            cursor = conn.cursor()
+
+            cursor.execute("SELECT * FROM products WHERE id = ?", (item_id,))
+            item_data = cursor.fetchone()
+
+            if not item_data:
+                QtWidgets.QMessageBox.warning(self, "Not Found", "No item found with the given ID.")
+                return
+
+            confirmation_dialog = QMessageBox(self)
+            confirmation_dialog.setIcon(QMessageBox.Question)
+            confirmation_dialog.setWindowTitle("Confirm Deletion")
+            confirmation_dialog.setText(f"Are you sure you want to delete this item?\n\n"
+                                        f"ID: {item_data[0]}\n"
+                                        f"Name: {item_data[1]}\n"
+                                        f"Quantity: {item_data[2]}\n"
+                                        f"Price: {item_data[3]}")
+            confirmation_dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+            confirmation_dialog.setDefaultButton(QMessageBox.No)
+
+            if confirmation_dialog.exec_() == QMessageBox.Yes:
+                cursor.execute("DELETE FROM products WHERE id = ?", (item_id,))
+                conn.commit()
+                QMessageBox.information(self, "Success", "Item deleted successfully.")
+                self.lineEdit_delete_item.clear()
+
+        except sqlite3.Error as e:
+            QMessageBox.critical(self, "Database Error", f"An error occurred: {e}")
+
+        finally:
+            if conn:
+                conn.close()
+
+
+
+    def add_item_to_database(self):
+        """Add item data to the database."""
+        # Get data from input fields
+        item_name = self.lineEdit_item_name.text()
+        item_quantity = self.lineEdit_item_quantity.text()
+        item_price = self.lineEdit_item_price.text()
+
+        # Validate input
+        if not item_name or not item_quantity or not item_price:
+            QtWidgets.QMessageBox.warning(None, "Input Error", "Please fill in all fields.")
+            return
+
+        try:
+            # Convert quantity and price to appropriate types
+            item_quantity = int(item_quantity)
+            item_price = float(item_price)
+        except ValueError:
+            QtWidgets.QMessageBox.warning(None, "Input Error",
+                                          "Quantity must be an integer and price must be a number.")
+            return
+
+        # Connect to the database
+        conn = None
+        try:
+            conn = sqlite3.connect("database/inventory.db")
+            cursor = conn.cursor()
+
+            # Insert data into the products table
+            cursor.execute(
+                "INSERT INTO products (name, quantity, price) VALUES (?, ?, ?)",
+                (item_name, item_quantity, item_price)
+            )
+            conn.commit()
+
+            # Show confirmation dialog
+            QtWidgets.QMessageBox.information(None, "Success", "Item added successfully!")
+
+            # Clear input fields
+            self.lineEdit_item_name.clear()
+            self.lineEdit_item_quantity.clear()
+            self.lineEdit_item_price.clear()
+
+        except sqlite3.Error as e:
+            QtWidgets.QMessageBox.critical(None, "Database Error", f"An error occurred: {e}")
+
+        finally:
+            if conn:
+                conn.close()
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
