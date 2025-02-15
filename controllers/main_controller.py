@@ -48,6 +48,17 @@ class Ui_Dialog(QMainWindow):
         self.Dashboard.setObjectName("Dashboard")
         self.tabWidget.addTab(self.Dashboard, "")
 
+
+
+
+
+
+
+
+
+
+        
+
         # Inventory tab setup
         # Add dashboard tab to tab widget
         self.Inventory = QtWidgets.QWidget()
