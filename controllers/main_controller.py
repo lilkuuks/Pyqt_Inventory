@@ -7,6 +7,7 @@ from functools import partial
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from utils.export_func import *
+from utils.import_func import *
 from utils.delete_func import delete_item
 
 
