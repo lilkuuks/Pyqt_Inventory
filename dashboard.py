@@ -1,101 +1,131 @@
 # dashboard.py
-from PyQt5 import QtWidgets, QtGui
-from PyQt5.QtWidgets import QLabel, QVBoxLayout, QHBoxLayout, QTableWidget, QTableWidgetItem, QFrame
-from PyQt5.QtChart import QChart, QChartView, QPieSeries
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QVBoxLayout, QLabel, QPushButton, QTableWidget, QTableWidgetItem
+import sqlite3
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 
-def setup_dashboard(parent):
-    """Set up a modern and visually appealing dashboard tab."""
+class DashboardTab(QtWidgets.QWidget):
+    def __init__(self):
+        super().__init__()
 
-    # Create Dashboard tab
-    parent.Dashboard = QtWidgets.QWidget()
-    parent.Dashboard.setObjectName("Dashboard")
+        # Main layout for the dashboard
+        self.layout = QVBoxLayout(self)
 
-    main_layout = QVBoxLayout(parent.Dashboard)
+        # Add a title
+        self.title = QLabel("Dashboard")
+        self.title.setStyleSheet("font-size: 20px; font-weight: bold;")
+        self.layout.addWidget(self.title)
 
-    # ====== Summary Panel ======
-    summary_frame = QFrame()
-    summary_frame.setFrameShape(QFrame.StyledPanel)
-    summary_layout = QHBoxLayout(summary_frame)
+        # Add key metrics
+        self.add_key_metrics()
 
-    summary_data = [
-        ("Total Products", "120"),
-        ("Low Stock Items", "5"),
-        ("Total Sales", "$15,240"),
-        ("Pending Orders", "8")
-    ]
+        # Add a chart
+        self.add_chart()
 
-    for title, value in summary_data:
-        box = QFrame()
-        box.setFrameShape(QFrame.StyledPanel)
-        box.setStyleSheet("background: #f4f4f4; border-radius: 10px; padding: 10px;")
+        # Add recent activity table
+        self.add_recent_activity()
 
-        vbox = QVBoxLayout(box)
-        label_title = QLabel(title)
-        label_title.setStyleSheet("font-weight: bold; font-size: 14px;")
-        label_value = QLabel(value)
-        label_value.setStyleSheet("font-size: 18px; color: #007bff;")
+        # Add quick action buttons
+        self.add_quick_actions()
 
-        vbox.addWidget(label_title)
-        vbox.addWidget(label_value)
-        summary_layout.addWidget(box)
+    def add_key_metrics(self):
+        """Add key metrics like total items and total value."""
+        # Fetch data from the database
+        total_items, total_value = self.fetch_key_metrics()
 
-    main_layout.addWidget(summary_frame)
+        # Create labels to display the metrics
+        self.label_total_items = QLabel(f"Total Items: {total_items}")
+        self.label_total_value = QLabel(f"Total Inventory Value: ${total_value:.2f}")
 
-    # ====== Recent Transactions Table ======
-    table_frame = QFrame()
-    table_frame.setFrameShape(QFrame.StyledPanel)
-    table_layout = QVBoxLayout(table_frame)
+        # Add to layout
+        self.layout.addWidget(self.label_total_items)
+        self.layout.addWidget(self.label_total_value)
 
-    label_table = QLabel("Recent Transactions")
-    label_table.setStyleSheet("font-size: 16px; font-weight: bold; margin-bottom: 5px;")
-    table_layout.addWidget(label_table)
+    def fetch_key_metrics(self):
+        """Fetch total items and total value from the database."""
+        conn = sqlite3.connect("database/inventory.db")
+        cursor = conn.cursor()
 
-    parent.transaction_table = QTableWidget()
-    parent.transaction_table.setColumnCount(3)
-    parent.transaction_table.setHorizontalHeaderLabels(["Date", "Item", "Amount"])
-    parent.transaction_table.setRowCount(3)
+        # Fetch total items
+        cursor.execute("SELECT COUNT(*) FROM products")
+        total_items = cursor.fetchone()[0]
 
-    transactions = [
-        ("2025-02-14", "Laptop", "$1200"),
-        ("2025-02-13", "Keyboard", "$150"),
-        ("2025-02-12", "Monitor", "$300"),
-    ]
+        # Fetch total value
+        cursor.execute("SELECT SUM(quantity * price) FROM products")
+        total_value = cursor.fetchone()[0] or 0  # Handle case where table is empty
 
-    for row, data in enumerate(transactions):
-        for col, value in enumerate(data):
-            parent.transaction_table.setItem(row, col, QTableWidgetItem(value))
+        conn.close()
+        return total_items, total_value
 
-    parent.transaction_table.setStyleSheet("background: white; border-radius: 5px;")
-    parent.transaction_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-    parent.transaction_table.horizontalHeader().setStretchLastSection(True)
+    def add_chart(self):
+        """Add a bar chart to visualize inventory data."""
+        # Fetch data for the chart
+        items, quantities = self.fetch_chart_data()
 
-    table_layout.addWidget(parent.transaction_table)
-    main_layout.addWidget(table_frame)
+        # Create a matplotlib figure
+        self.figure = plt.figure()
+        self.canvas = FigureCanvas(self.figure)
 
-    # ====== Sales Chart ======
-    chart_frame = QFrame()
-    chart_frame.setFrameShape(QFrame.StyledPanel)
-    chart_layout = QVBoxLayout(chart_frame)
+        # Create a bar chart
+        ax = self.figure.add_subplot(111)
+        ax.bar(items, quantities)
+        ax.set_xlabel("Items")
+        ax.set_ylabel("Quantity")
+        ax.set_title("Inventory Quantities")
 
-    label_chart = QLabel("Sales Distribution")
-    label_chart.setStyleSheet("font-size: 16px; font-weight: bold; margin-bottom: 5px;")
-    chart_layout.addWidget(label_chart)
+        # Add the chart to the layout
+        self.layout.addWidget(self.canvas)
 
-    series = QPieSeries()
-    series.append("Electronics", 50)
-    series.append("Accessories", 30)
-    series.append("Software", 20)
+    def fetch_chart_data(self):
+        """Fetch item names and quantities for the chart."""
+        conn = sqlite3.connect("database/inventory.db")
+        cursor = conn.cursor()
 
-    chart = QChart()
-    chart.addSeries(series)
-    chart.setTitle("Sales by Category")
-    chart.legend().setVisible(True)
+        cursor.execute("SELECT name, quantity FROM products")
+        data = cursor.fetchall()
 
-    chart_view = QChartView(chart)
-    chart_view.setRenderHint(QtGui.QPainter.Antialiasing)
+        conn.close()
 
-    chart_layout.addWidget(chart_view)
-    main_layout.addWidget(chart_frame)
+        # Separate item names and quantities
+        items = [row[0] for row in data]
+        quantities = [row[1] for row in data]
 
-    parent.tabWidget.addTab(parent.Dashboard, "Dashboard")
+        return items, quantities
+
+    def add_recent_activity(self):
+        """Add a table to show recent activity."""
+        self.recent_activity_table = QTableWidget()
+        self.recent_activity_table.setColumnCount(4)
+        self.recent_activity_table.setHorizontalHeaderLabels(["ID", "Name", "Quantity", "Price"])
+
+        # Fetch recent activity data
+        self.load_recent_activity()
+
+        # Add the table to the layout
+        self.layout.addWidget(self.recent_activity_table)
+
+    def load_recent_activity(self):
+        """Load recent activity data into the table."""
+        conn = sqlite3.connect("database/inventory.db")
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT * FROM products ORDER BY id DESC LIMIT 10")  # Fetch last 10 items
+        rows = cursor.fetchall()
+
+        self.recent_activity_table.setRowCount(len(rows))
+        for row_index, row_data in enumerate(rows):
+            for col_index, col_data in enumerate(row_data):
+                self.recent_activity_table.setItem(row_index, col_index, QTableWidgetItem(str(col_data)))
+
+        conn.close()
+
+    def add_quick_actions(self):
+        """Add buttons for quick actions."""
+        self.button_add_item = QPushButton("Add Item")
+        self.button_delete_item = QPushButton("Delete Item")
+
+        # Add buttons to layout
+        self.layout.addWidget(self.button_add_item)
+        self.layout.addWidget(self.button_delete_item)

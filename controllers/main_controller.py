@@ -1,13 +1,12 @@
-import sqlite3
 import re
+import sqlite3
 import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from functools import partial
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
-from utils.export_func import *
-from utils.import_func import *
+from utils.export_func import export_data
+from utils.import_func import import_data
+from dashboard import DashboardTab
 
 class Ui_Dialog(QMainWindow):
     def setupUi(self, MainWindow):
@@ -44,7 +43,7 @@ class Ui_Dialog(QMainWindow):
         self.tabWidget.setObjectName("tabWidget")
 
         # Dashboard tab setup
-        self.Dashboard = QtWidgets.QWidget()
+        self.Dashboard = DashboardTab()
         self.Dashboard.setObjectName("Dashboard")
         self.tabWidget.addTab(self.Dashboard, "")
 
@@ -236,9 +235,6 @@ class Ui_Dialog(QMainWindow):
         self.search_lnput.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.search_lnput.setObjectName("search_lnput")
         self.horizontalLayout_2.addWidget(self.search_lnput)
-
-
-
 
 
 
