@@ -6,24 +6,22 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from utils.export_func import export_data
 from utils.import_func import import_data
-from dashboard import DashboardTab
+from gui_tabs.dashboard import DashboardTab
+
 
 class Ui_Dialog(QMainWindow):
     def setupUi(self, MainWindow):
         """
-
-        :type MainWindow: object
+        Setup the main window UI.
+        :type MainWindow: QMainWindow
         """
         # Main window setup
         MainWindow.setObjectName("INVENTORY SYSTEM")
         icon_path = "assets/icons/inventory.png"
         MainWindow.setWindowIcon(QtGui.QIcon(icon_path))
-        MainWindow.resize(986, 646)
-        # MainWindow.setWindowState(Qt.WindowMaximized)
 
-        #set size constraints
-        MainWindow.setMinimumSize(QtCore.QSize(986, 646))
-        MainWindow.setMaximumSize(QtCore.QSize(986, 646))
+        # Set initial window size (user can resize it)
+        MainWindow.resize(986, 646)
 
         # Set proper window flags
         MainWindow.setWindowFlags(
@@ -48,15 +46,6 @@ class Ui_Dialog(QMainWindow):
         self.tabWidget.addTab(self.Dashboard, "")
 
 
-
-
-
-
-
-
-
-
-        
 
         # Inventory tab setup
         # Add dashboard tab to tab widget
