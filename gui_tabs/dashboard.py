@@ -1,21 +1,39 @@
-from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtWidgets import (QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
-                             QTableWidget, QTableWidgetItem, QFrame, QSizePolicy)
-from PyQt5.QtCore import Qt
+import os
+import logging
+import datetime
 import sqlite3
-import matplotlib.pyplot as plt
+from PyQt5.QtCore import Qt
+from PyQt5 import QtWidgets, QtCore, QtGui
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
-import numpy as np
+from PyQt5.QtWidgets import (QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
+                             QTableWidget, QTableWidgetItem, QFrame, QSizePolicy)
 
+# Set up logging: Create log folder if it doesn't exist and configure logging
+log_folder = "log"
+if not os.path.exists(log_folder):
+    os.makedirs(log_folder)
+current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+log_filename = os.path.join(log_folder, f"app_log_{current_date}.log")
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler(log_filename),
+        logging.StreamHandler()
+    ]
+)
+logging.info("Application started")
 
 class DashboardTab(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
+        logging.info("Initializing DashboardTab UI")
         self.init_ui()
         self.load_data()
 
     def init_ui(self):
+        logging.debug("Setting up UI layouts and widgets")
         # Main layout for the Dashboard tab
         self.main_layout = QVBoxLayout(self)
         self.main_layout.setContentsMargins(20, 20, 20, 20)
@@ -157,6 +175,7 @@ class DashboardTab(QtWidgets.QWidget):
             self.quick_actions.addWidget(btn)
 
         self.main_layout.addLayout(self.quick_actions)
+        logging.info("UI initialization complete.")
 
     def create_metric_card(self, title, value, color, icon_path):
         card = QFrame()
@@ -166,41 +185,34 @@ class DashboardTab(QtWidgets.QWidget):
             padding: 15px;
             color: white;
         """)
-        # Optionally, remove a fixed height to allow dynamic resizing:
-        # card.setFixedHeight(120)
-
         layout = QHBoxLayout(card)
-
-        # Icon
         icon_label = QLabel()
         icon_label.setPixmap(QtGui.QIcon(icon_path).pixmap(40, 40))
         icon_label.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         layout.addWidget(icon_label)
-
-        # Text Layout
         text_layout = QVBoxLayout()
         text_layout.setAlignment(Qt.AlignCenter)
-
         title_label = QLabel(title)
         title_label.setStyleSheet("font-size: 14px; font-weight: 500;")
         title_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-
         value_label = QLabel(value)
         value_label.setStyleSheet("font-size: 24px; font-weight: bold;")
         value_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-
         text_layout.addWidget(title_label)
         text_layout.addWidget(value_label)
         layout.addLayout(text_layout)
-
+        logging.debug(f"Metric card '{title}' created with initial value '{value}'.")
         return card
 
     def darken_color(self, hex_color, factor=0.8):
         """Darken a hex color by a factor (0-1)"""
         color = QtGui.QColor(hex_color)
-        return color.darker(int(100 + (100 * (1 - factor)))).name()
+        darkened = color.darker(int(100 + (100 * (1 - factor)))).name()
+        logging.debug(f"Color {hex_color} darkened to {darkened}.")
+        return darkened
 
     def load_data(self):
+        logging.info("Loading data from the database.")
         try:
             conn = sqlite3.connect("database/inventory.db")
             cursor = conn.cursor()
@@ -210,79 +222,75 @@ class DashboardTab(QtWidgets.QWidget):
             total_items = cursor.fetchone()[0]
             total_items_label = self.total_items_card.findChildren(QLabel)[1]
             total_items_label.setText(str(total_items))
+            logging.debug(f"Total items: {total_items}")
 
             # Total Value
             cursor.execute("SELECT SUM(quantity * price) FROM products")
             total_value = cursor.fetchone()[0] or 0
             total_value_label = self.total_value_card.findChildren(QLabel)[1]
             total_value_label.setText(f"${total_value:,.2f}")
+            logging.debug(f"Total value: ${total_value:,.2f}")
 
             # Low Stock
             cursor.execute("SELECT COUNT(*) FROM products WHERE quantity < 10")
             low_stock = cursor.fetchone()[0]
             low_stock_label = self.low_stock_card.findChildren(QLabel)[1]
             low_stock_label.setText(str(low_stock))
+            logging.debug(f"Low stock items: {low_stock}")
 
-            # Update Chart and Recent Activity
             self.update_chart(cursor)
             self.update_recent_activity(cursor)
-
             conn.close()
-
+            logging.info("Data loaded and UI updated successfully.")
         except sqlite3.Error as e:
-            print(f"Database error: {e}")
+            logging.error(f"Database error: {e}")
 
     def update_chart(self, cursor):
+        logging.info("Updating chart.")
         self.figure.clear()
         ax = self.figure.add_subplot(111)
-
         cursor.execute("SELECT name, quantity FROM products ORDER BY quantity DESC LIMIT 5")
         data = cursor.fetchall()
-
         if data:
             items = [row[0] for row in data]
             quantities = [row[1] for row in data]
-
             bars = ax.bar(items, quantities, color='#3498db')
             ax.set_ylabel('Quantity')
             ax.set_title('Top 5 Stock Items')
-
-            # Attempt to add labels using bar_label (requires Matplotlib 3.4+)
             try:
                 ax.bar_label(bars, padding=3)
             except Exception:
-                # Fallback if bar_label is not available
                 for bar in bars:
                     height = bar.get_height()
                     ax.text(bar.get_x() + bar.get_width() / 2., height,
                             f'{height}', ha='center', va='bottom', fontsize=9)
+            logging.debug(f"Chart updated with data: {data}")
         else:
             ax.text(0.5, 0.5, 'No data available', ha='center', va='center', fontsize=12, color='gray')
-
-        # Rotate x-axis labels to prevent overlap
+            logging.debug("No data available for chart.")
         for label in ax.get_xticklabels():
             label.set_rotation(45)
             label.set_ha("right")
-
         self.figure.tight_layout()
         self.canvas.draw()
+        logging.info("Chart drawing complete.")
 
     def update_recent_activity(self, cursor):
+        logging.info("Updating recent activity table.")
         self.recent_activity_table.setRowCount(0)
-
         cursor.execute("SELECT * FROM products ORDER BY id DESC LIMIT 10")
         rows = cursor.fetchall()
-
         if not rows:
+            logging.debug("No recent activity found.")
             return
-
         self.recent_activity_table.setRowCount(len(rows))
         for row_idx, row_data in enumerate(rows):
             for col_idx, col_data in enumerate(row_data):
                 item = QTableWidgetItem(str(col_data))
-                if col_idx == 3:  # Price column formatting
+                if col_idx == 3:  # Format Price column
                     try:
                         item.setText(f"${float(col_data):.2f}")
                     except (ValueError, TypeError):
                         pass
                 self.recent_activity_table.setItem(row_idx, col_idx, item)
+        logging.info("Recent activity table updated.")
