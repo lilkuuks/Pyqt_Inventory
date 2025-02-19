@@ -208,7 +208,7 @@ class DashboardTab(QtWidgets.QWidget):
         """Darken a hex color by a factor (0-1)"""
         color = QtGui.QColor(hex_color)
         darkened = color.darker(int(100 + (100 * (1 - factor)))).name()
-        logging.debug(f"Color {hex_color} darkened to {darkened}.")
+        # logging.debug(f"Color {hex_color} darkened to {darkened}.")
         return darkened
 
     def load_data(self):
@@ -294,3 +294,5 @@ class DashboardTab(QtWidgets.QWidget):
                         pass
                 self.recent_activity_table.setItem(row_idx, col_idx, item)
         logging.info("Recent activity table updated.")
+
+logging.getLogger('matplotlib.font_manager').setLevel(logging.WARNING)
