@@ -24,7 +24,7 @@ pip install -r requirements.txt
 ## Usage
 Run the application with:
 ```sh
-python main_controller.py
+python main.py
 ```
 
 ### Exporting Data
