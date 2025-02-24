@@ -15,6 +15,12 @@ An inventory management system built using PyQt5 and SQLite to help users add, u
 ### Prerequisites
 Ensure you have Python 3 installed. Then, install the required dependencies:
 
+Activate the Virtual Environment:
+
+```sh
+ cd .\venv\Scripts\activate
+```
+
 To install the required dependencies, run:
 
 ```sh
