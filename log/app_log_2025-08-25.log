@@ -1,0 +1,86 @@
+2025-08-25 15:03:21,710 [INFO] Export module started
+2025-08-25 15:03:21,713 [INFO] Import module started
+2025-08-25 15:03:21,752 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-08-25 15:03:21,768 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-08-25 15:03:22,015 [INFO] Application started
+2025-08-25 15:03:22,154 [INFO] Initializing DashboardTab UI
+2025-08-25 15:03:22,155 [DEBUG] Setting up UI layouts and widgets
+2025-08-25 15:03:22,168 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-08-25 15:03:22,170 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-08-25 15:03:22,171 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-08-25 15:03:23,103 [INFO] UI initialization complete.
+2025-08-25 15:03:23,103 [INFO] Loading data from the database.
+2025-08-25 15:03:23,110 [DEBUG] Total items: 26
+2025-08-25 15:03:23,110 [DEBUG] Total value: $397,778.00
+2025-08-25 15:03:23,111 [DEBUG] Low stock items: 1
+2025-08-25 15:03:23,111 [INFO] Updating chart.
+2025-08-25 15:03:23,133 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-08-25 15:03:23,186 [INFO] Chart drawing complete.
+2025-08-25 15:03:23,186 [INFO] Updating recent activity table.
+2025-08-25 15:03:23,187 [INFO] Recent activity table updated.
+2025-08-25 15:03:23,187 [INFO] Data loaded and UI updated successfully.
+2025-08-25 15:03:23,221 [INFO] Loaded 26 rows from the database.
+2025-08-25 15:03:23,222 [DEBUG] Table widget updated with new data.
+2025-08-25 15:03:48,915 [INFO] Loading data from the database.
+2025-08-25 15:03:48,915 [DEBUG] Total items: 26
+2025-08-25 15:03:48,916 [DEBUG] Total value: $397,778.00
+2025-08-25 15:03:48,916 [DEBUG] Low stock items: 1
+2025-08-25 15:03:48,916 [INFO] Updating chart.
+2025-08-25 15:03:48,931 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-08-25 15:03:48,960 [INFO] Chart drawing complete.
+2025-08-25 15:03:48,960 [INFO] Updating recent activity table.
+2025-08-25 15:03:48,960 [INFO] Recent activity table updated.
+2025-08-25 15:03:48,960 [INFO] Data loaded and UI updated successfully.
+2025-08-25 15:03:49,793 [INFO] Loading data from the database.
+2025-08-25 15:03:49,793 [DEBUG] Total items: 26
+2025-08-25 15:03:49,794 [DEBUG] Total value: $397,778.00
+2025-08-25 15:03:49,794 [DEBUG] Low stock items: 1
+2025-08-25 15:03:49,794 [INFO] Updating chart.
+2025-08-25 15:03:49,810 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-08-25 15:03:49,850 [INFO] Chart drawing complete.
+2025-08-25 15:03:49,850 [INFO] Updating recent activity table.
+2025-08-25 15:03:49,850 [INFO] Recent activity table updated.
+2025-08-25 15:03:49,850 [INFO] Data loaded and UI updated successfully.
+2025-08-25 15:03:59,305 [INFO] Applying filter 't' to 26 rows.
+2025-08-25 15:03:59,325 [DEBUG] Filter applied successfully.
+2025-08-25 15:03:59,919 [INFO] Applying filter 'tt' to 26 rows.
+2025-08-25 15:03:59,919 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:00,245 [INFO] Applying filter 'ttr' to 26 rows.
+2025-08-25 15:04:00,246 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:01,011 [INFO] Applying filter 'tt' to 26 rows.
+2025-08-25 15:04:01,012 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:01,192 [INFO] Applying filter 't' to 26 rows.
+2025-08-25 15:04:01,193 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:01,363 [INFO] Applying filter '' to 26 rows.
+2025-08-25 15:04:01,363 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:02,308 [INFO] Applying filter 'q' to 26 rows.
+2025-08-25 15:04:02,308 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:02,560 [INFO] Applying filter 'qe' to 26 rows.
+2025-08-25 15:04:02,561 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:02,562 [INFO] Applying filter 'qew' to 26 rows.
+2025-08-25 15:04:02,562 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:02,772 [INFO] Applying filter 'qewr' to 26 rows.
+2025-08-25 15:04:02,773 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:03,392 [INFO] Applying filter 'qew' to 26 rows.
+2025-08-25 15:04:03,393 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:03,600 [INFO] Applying filter 'qe' to 26 rows.
+2025-08-25 15:04:03,600 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:03,762 [INFO] Applying filter 'q' to 26 rows.
+2025-08-25 15:04:03,763 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:04,374 [INFO] Applying filter '' to 26 rows.
+2025-08-25 15:04:04,374 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:05,838 [INFO] Applying filter 'h' to 26 rows.
+2025-08-25 15:04:05,839 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:06,205 [INFO] Applying filter 'he' to 26 rows.
+2025-08-25 15:04:06,206 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:06,406 [INFO] Applying filter 'hea' to 26 rows.
+2025-08-25 15:04:06,407 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:07,574 [INFO] Applying filter 'he' to 26 rows.
+2025-08-25 15:04:07,575 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:08,142 [INFO] Applying filter 'h' to 26 rows.
+2025-08-25 15:04:08,143 [DEBUG] Filter applied successfully.
+2025-08-25 15:04:14,490 [INFO] Creating exports folder if it doesn't exist.
+2025-08-25 15:04:14,510 [INFO] Export file will be saved to: C:\Users\lilku\Downloads\Inventory Exports\exported_data.xlsx
+2025-08-25 15:04:14,511 [INFO] Connecting to the database.
+2025-08-25 15:04:14,515 [INFO] Data retrieved from the database successfully.
+2025-08-25 15:04:14,915 [INFO] Data exported to Excel file successfully.

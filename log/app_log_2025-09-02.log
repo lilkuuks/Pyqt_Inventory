@@ -1,0 +1,23 @@
+2025-09-02 10:46:10,621 [INFO] Export module started
+2025-09-02 10:46:10,623 [INFO] Import module started
+2025-09-02 10:46:10,658 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-09-02 10:46:10,678 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-09-02 10:46:10,986 [INFO] Application started
+2025-09-02 10:46:11,112 [INFO] Initializing DashboardTab UI
+2025-09-02 10:46:11,112 [DEBUG] Setting up UI layouts and widgets
+2025-09-02 10:46:11,123 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-09-02 10:46:11,124 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-09-02 10:46:11,125 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-09-02 10:46:12,212 [INFO] UI initialization complete.
+2025-09-02 10:46:12,213 [INFO] Loading data from the database.
+2025-09-02 10:46:12,220 [DEBUG] Total items: 27
+2025-09-02 10:46:12,221 [DEBUG] Total value: $397,934.00
+2025-09-02 10:46:12,221 [DEBUG] Low stock items: 1
+2025-09-02 10:46:12,221 [INFO] Updating chart.
+2025-09-02 10:46:12,233 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-09-02 10:46:12,296 [INFO] Chart drawing complete.
+2025-09-02 10:46:12,296 [INFO] Updating recent activity table.
+2025-09-02 10:46:12,311 [INFO] Recent activity table updated.
+2025-09-02 10:46:12,311 [INFO] Data loaded and UI updated successfully.
+2025-09-02 10:46:12,349 [INFO] Loaded 27 rows from the database.
+2025-09-02 10:46:12,349 [DEBUG] Table widget updated with new data.

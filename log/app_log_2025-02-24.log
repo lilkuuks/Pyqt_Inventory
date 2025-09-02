@@ -1,0 +1,127 @@
+2025-02-24 14:23:44,027 [INFO] Export module started
+2025-02-24 14:23:44,030 [INFO] Import module started
+2025-02-24 14:23:44,064 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-02-24 14:23:44,078 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-02-24 14:23:44,328 [INFO] Application started
+2025-02-24 14:23:44,450 [INFO] Initializing DashboardTab UI
+2025-02-24 14:23:44,450 [DEBUG] Setting up UI layouts and widgets
+2025-02-24 14:23:44,462 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-02-24 14:23:44,463 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-02-24 14:23:44,464 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-02-24 14:23:45,058 [INFO] UI initialization complete.
+2025-02-24 14:23:45,058 [INFO] Loading data from the database.
+2025-02-24 14:23:45,068 [DEBUG] Total items: 26
+2025-02-24 14:23:45,069 [DEBUG] Total value: $397,778.00
+2025-02-24 14:23:45,069 [DEBUG] Low stock items: 1
+2025-02-24 14:23:45,069 [INFO] Updating chart.
+2025-02-24 14:23:45,091 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-02-24 14:23:45,143 [INFO] Chart drawing complete.
+2025-02-24 14:23:45,143 [INFO] Updating recent activity table.
+2025-02-24 14:23:45,145 [INFO] Recent activity table updated.
+2025-02-24 14:23:45,145 [INFO] Data loaded and UI updated successfully.
+2025-02-24 14:23:45,185 [INFO] Loaded 26 rows from the database.
+2025-02-24 14:23:45,185 [DEBUG] Table widget updated with new data.
+2025-02-24 14:24:52,338 [INFO] Export module started
+2025-02-24 14:24:52,339 [INFO] Import module started
+2025-02-24 14:24:52,354 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-02-24 14:24:52,358 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-02-24 14:24:52,566 [INFO] Application started
+2025-02-24 14:24:52,628 [INFO] Initializing DashboardTab UI
+2025-02-24 14:24:52,628 [DEBUG] Setting up UI layouts and widgets
+2025-02-24 14:24:52,631 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-02-24 14:24:52,632 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-02-24 14:24:52,633 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-02-24 14:24:53,054 [INFO] UI initialization complete.
+2025-02-24 14:24:53,054 [INFO] Loading data from the database.
+2025-02-24 14:24:53,054 [DEBUG] Total items: 26
+2025-02-24 14:24:53,055 [DEBUG] Total value: $397,778.00
+2025-02-24 14:24:53,055 [DEBUG] Low stock items: 1
+2025-02-24 14:24:53,055 [INFO] Updating chart.
+2025-02-24 14:24:53,069 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-02-24 14:24:53,116 [INFO] Chart drawing complete.
+2025-02-24 14:24:53,116 [INFO] Updating recent activity table.
+2025-02-24 14:24:53,117 [INFO] Recent activity table updated.
+2025-02-24 14:24:53,117 [INFO] Data loaded and UI updated successfully.
+2025-02-24 14:24:53,132 [INFO] Loaded 26 rows from the database.
+2025-02-24 14:24:53,132 [DEBUG] Table widget updated with new data.
+2025-02-24 14:25:23,375 [INFO] Export module started
+2025-02-24 14:25:23,376 [INFO] Import module started
+2025-02-24 14:25:23,391 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-02-24 14:25:23,394 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-02-24 14:25:23,602 [INFO] Application started
+2025-02-24 14:25:23,674 [INFO] Initializing DashboardTab UI
+2025-02-24 14:25:23,674 [DEBUG] Setting up UI layouts and widgets
+2025-02-24 14:25:23,676 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-02-24 14:25:23,677 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-02-24 14:25:23,679 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-02-24 14:25:24,027 [INFO] UI initialization complete.
+2025-02-24 14:25:24,027 [INFO] Loading data from the database.
+2025-02-24 14:25:24,028 [DEBUG] Total items: 26
+2025-02-24 14:25:24,028 [DEBUG] Total value: $397,778.00
+2025-02-24 14:25:24,028 [DEBUG] Low stock items: 1
+2025-02-24 14:25:24,028 [INFO] Updating chart.
+2025-02-24 14:25:24,041 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-02-24 14:25:24,093 [INFO] Chart drawing complete.
+2025-02-24 14:25:24,093 [INFO] Updating recent activity table.
+2025-02-24 14:25:24,093 [INFO] Recent activity table updated.
+2025-02-24 14:25:24,093 [INFO] Data loaded and UI updated successfully.
+2025-02-24 14:25:24,108 [INFO] Loaded 26 rows from the database.
+2025-02-24 14:25:24,109 [DEBUG] Table widget updated with new data.
+2025-02-24 14:36:21,242 [INFO] Export module started
+2025-02-24 14:36:21,245 [INFO] Import module started
+2025-02-24 14:36:21,360 [DEBUG] matplotlib data path: C:\Users\lilku\Documents\PYTHON PROJECTS\Pyqt_Inventory\.venv\Lib\site-packages\matplotlib\mpl-data
+2025-02-24 14:36:21,366 [DEBUG] CONFIGDIR=C:\Users\lilku\.matplotlib
+2025-02-24 14:36:21,367 [DEBUG] interactive is False
+2025-02-24 14:36:21,367 [DEBUG] platform is win32
+2025-02-24 14:36:21,408 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-02-24 14:36:21,412 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-02-24 14:36:21,629 [INFO] Application started
+2025-02-24 14:36:21,746 [INFO] Initializing DashboardTab UI
+2025-02-24 14:36:21,746 [DEBUG] Setting up UI layouts and widgets
+2025-02-24 14:36:21,764 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-02-24 14:36:21,765 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-02-24 14:36:21,767 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-02-24 14:36:22,444 [INFO] UI initialization complete.
+2025-02-24 14:36:22,444 [INFO] Loading data from the database.
+2025-02-24 14:36:22,449 [DEBUG] Total items: 26
+2025-02-24 14:36:22,450 [DEBUG] Total value: $397,778.00
+2025-02-24 14:36:22,450 [DEBUG] Low stock items: 1
+2025-02-24 14:36:22,451 [INFO] Updating chart.
+2025-02-24 14:36:22,472 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-02-24 14:36:22,529 [INFO] Chart drawing complete.
+2025-02-24 14:36:22,530 [INFO] Updating recent activity table.
+2025-02-24 14:36:22,531 [INFO] Recent activity table updated.
+2025-02-24 14:36:22,532 [INFO] Data loaded and UI updated successfully.
+2025-02-24 14:36:22,553 [INFO] Loaded 26 rows from the database.
+2025-02-24 14:36:22,553 [DEBUG] Table widget updated with new data.
+2025-02-24 14:40:11,669 [INFO] Export module started
+2025-02-24 14:40:11,670 [INFO] Import module started
+2025-02-24 14:40:11,692 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-02-24 14:40:11,695 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-02-24 14:40:11,895 [INFO] Application started
+2025-02-24 14:40:11,973 [INFO] Initializing DashboardTab UI
+2025-02-24 14:40:11,974 [DEBUG] Setting up UI layouts and widgets
+2025-02-24 14:40:11,976 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-02-24 14:40:11,976 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-02-24 14:40:11,977 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-02-24 14:40:12,334 [INFO] UI initialization complete.
+2025-02-24 14:40:12,335 [INFO] Loading data from the database.
+2025-02-24 14:40:12,336 [DEBUG] Total items: 26
+2025-02-24 14:40:12,336 [DEBUG] Total value: $397,778.00
+2025-02-24 14:40:12,336 [DEBUG] Low stock items: 1
+2025-02-24 14:40:12,336 [INFO] Updating chart.
+2025-02-24 14:40:12,352 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-02-24 14:40:12,398 [INFO] Chart drawing complete.
+2025-02-24 14:40:12,398 [INFO] Updating recent activity table.
+2025-02-24 14:40:12,399 [INFO] Recent activity table updated.
+2025-02-24 14:40:12,399 [INFO] Data loaded and UI updated successfully.
+2025-02-24 14:40:12,415 [INFO] Loaded 26 rows from the database.
+2025-02-24 14:40:12,415 [DEBUG] Table widget updated with new data.
+2025-02-24 14:40:20,795 [INFO] Export module started
+2025-02-24 14:40:20,799 [INFO] Import module started
+2025-02-24 14:40:20,915 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-02-24 14:40:20,920 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-02-24 14:40:48,978 [INFO] Export module started
+2025-02-24 14:40:48,980 [INFO] Import module started
+2025-02-24 14:40:49,014 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-02-24 14:40:49,019 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json

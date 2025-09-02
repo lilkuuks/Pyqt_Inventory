@@ -1,0 +1,75 @@
+2025-08-27 09:31:08,391 [INFO] Export module started
+2025-08-27 09:31:08,392 [INFO] Import module started
+2025-08-27 09:31:08,428 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-08-27 09:31:08,448 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-08-27 09:31:08,716 [INFO] Application started
+2025-08-27 09:31:08,844 [INFO] Initializing DashboardTab UI
+2025-08-27 09:31:08,844 [DEBUG] Setting up UI layouts and widgets
+2025-08-27 09:31:08,854 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-08-27 09:31:08,855 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-08-27 09:31:08,857 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-08-27 09:31:09,790 [INFO] UI initialization complete.
+2025-08-27 09:31:09,790 [INFO] Loading data from the database.
+2025-08-27 09:31:09,801 [DEBUG] Total items: 26
+2025-08-27 09:31:09,801 [DEBUG] Total value: $397,778.00
+2025-08-27 09:31:09,802 [DEBUG] Low stock items: 1
+2025-08-27 09:31:09,802 [INFO] Updating chart.
+2025-08-27 09:31:09,833 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-08-27 09:31:09,900 [INFO] Chart drawing complete.
+2025-08-27 09:31:09,901 [INFO] Updating recent activity table.
+2025-08-27 09:31:09,902 [INFO] Recent activity table updated.
+2025-08-27 09:31:09,902 [INFO] Data loaded and UI updated successfully.
+2025-08-27 09:31:09,946 [INFO] Loaded 26 rows from the database.
+2025-08-27 09:31:09,946 [DEBUG] Table widget updated with new data.
+2025-08-27 09:32:13,163 [INFO] Applying filter 'q' to 26 rows.
+2025-08-27 09:32:13,165 [DEBUG] Filter applied successfully.
+2025-08-27 09:32:14,507 [INFO] Applying filter '' to 26 rows.
+2025-08-27 09:32:14,507 [DEBUG] Filter applied successfully.
+2025-08-27 09:32:15,783 [INFO] Applying filter 't' to 26 rows.
+2025-08-27 09:32:15,783 [DEBUG] Filter applied successfully.
+2025-08-27 09:32:16,267 [INFO] Applying filter 'tt' to 26 rows.
+2025-08-27 09:32:16,267 [DEBUG] Filter applied successfully.
+2025-08-27 09:32:19,271 [INFO] Applying filter 't' to 26 rows.
+2025-08-27 09:32:19,271 [DEBUG] Filter applied successfully.
+2025-08-27 09:32:19,913 [INFO] Applying filter '' to 26 rows.
+2025-08-27 09:32:19,914 [DEBUG] Filter applied successfully.
+2025-08-27 09:33:20,127 [INFO] Loaded 26 rows from the database.
+2025-08-27 09:33:20,128 [DEBUG] Table widget updated with new data.
+2025-08-27 09:35:51,461 [INFO] Adding a new item to the database.
+2025-08-27 09:35:51,482 [INFO] Connecting to the database for adding a new item.
+2025-08-27 09:35:51,482 [DEBUG] Existing names in database: ['Smartphone', 'Headphones', 'Smartwatch', 'Monitor', 'Keyboard', 'Mouse', 'External Hard Drive', 'Webcam', 'Wireless Charger', 'Flash Drive', 'Bluetooth Speaker', 'Projector', 'Digital Camera', 'Game Console', 'Smart Thermostat', 'Air Purifier', 'Electric Kettle', 'Hair Dryer', 'heelo', 'test', 'the bow', 'car', 'car', 'Car', 'TEST', 'kay']
+2025-08-27 09:35:51,490 [INFO] Item 'john' added successfully.
+2025-08-27 09:35:58,156 [INFO] Loaded 27 rows from the database.
+2025-08-27 09:35:58,160 [DEBUG] Table widget updated with new data.
+2025-08-27 09:36:12,960 [INFO] Fetching item with ID: 29
+2025-08-27 09:36:12,962 [INFO] Item found: (29, 'john', 133, 60.0, None)
+2025-08-27 09:36:17,980 [INFO] Item with ID 29 deleted successfully.
+2025-08-27 09:36:21,436 [INFO] Loaded 26 rows from the database.
+2025-08-27 09:36:21,436 [DEBUG] Table widget updated with new data.
+2025-08-27 09:36:29,686 [INFO] Loaded 26 rows from the database.
+2025-08-27 09:36:29,686 [DEBUG] Table widget updated with new data.
+2025-08-27 09:36:31,243 [INFO] Loading data from the database.
+2025-08-27 09:36:31,243 [DEBUG] Total items: 26
+2025-08-27 09:36:31,243 [DEBUG] Total value: $397,778.00
+2025-08-27 09:36:31,243 [DEBUG] Low stock items: 1
+2025-08-27 09:36:31,243 [INFO] Updating chart.
+2025-08-27 09:36:31,266 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-08-27 09:36:31,307 [INFO] Chart drawing complete.
+2025-08-27 09:36:31,307 [INFO] Updating recent activity table.
+2025-08-27 09:36:31,307 [INFO] Recent activity table updated.
+2025-08-27 09:36:31,307 [INFO] Data loaded and UI updated successfully.
+2025-08-27 09:36:31,864 [INFO] Loading data from the database.
+2025-08-27 09:36:31,866 [DEBUG] Total items: 26
+2025-08-27 09:36:31,866 [DEBUG] Total value: $397,778.00
+2025-08-27 09:36:31,866 [DEBUG] Low stock items: 1
+2025-08-27 09:36:31,866 [INFO] Updating chart.
+2025-08-27 09:36:31,880 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-08-27 09:36:31,912 [INFO] Chart drawing complete.
+2025-08-27 09:36:31,912 [INFO] Updating recent activity table.
+2025-08-27 09:36:31,912 [INFO] Recent activity table updated.
+2025-08-27 09:36:31,912 [INFO] Data loaded and UI updated successfully.
+2025-08-27 09:36:35,581 [INFO] Creating exports folder if it doesn't exist.
+2025-08-27 09:36:35,601 [INFO] Export file will be saved to: C:\Users\lilku\Downloads\Inventory Exports\exported_data.xlsx
+2025-08-27 09:36:35,601 [INFO] Connecting to the database.
+2025-08-27 09:36:35,606 [INFO] Data retrieved from the database successfully.
+2025-08-27 09:36:35,910 [INFO] Data exported to Excel file successfully.

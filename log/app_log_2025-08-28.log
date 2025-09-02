@@ -1,0 +1,144 @@
+2025-08-28 12:08:19,813 [INFO] Export module started
+2025-08-28 12:08:19,824 [INFO] Import module started
+2025-08-28 12:08:20,337 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-08-28 12:08:20,393 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-08-28 12:08:21,140 [INFO] Application started
+2025-08-28 12:08:21,288 [INFO] Initializing DashboardTab UI
+2025-08-28 12:08:21,288 [DEBUG] Setting up UI layouts and widgets
+2025-08-28 12:08:21,298 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-08-28 12:08:21,299 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-08-28 12:08:21,300 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-08-28 12:08:22,314 [INFO] UI initialization complete.
+2025-08-28 12:08:22,314 [INFO] Loading data from the database.
+2025-08-28 12:08:22,322 [DEBUG] Total items: 26
+2025-08-28 12:08:22,323 [DEBUG] Total value: $397,778.00
+2025-08-28 12:08:22,323 [DEBUG] Low stock items: 1
+2025-08-28 12:08:22,323 [INFO] Updating chart.
+2025-08-28 12:08:22,362 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-08-28 12:08:22,489 [INFO] Chart drawing complete.
+2025-08-28 12:08:22,490 [INFO] Updating recent activity table.
+2025-08-28 12:08:22,493 [INFO] Recent activity table updated.
+2025-08-28 12:08:22,493 [INFO] Data loaded and UI updated successfully.
+2025-08-28 12:08:22,538 [INFO] Loaded 26 rows from the database.
+2025-08-28 12:08:22,539 [DEBUG] Table widget updated with new data.
+2025-08-28 12:09:00,577 [INFO] Export module started
+2025-08-28 12:09:00,583 [INFO] Import module started
+2025-08-28 12:09:00,771 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-08-28 12:09:00,786 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-08-28 12:09:03,002 [INFO] Application started
+2025-08-28 12:09:03,035 [INFO] Initializing DashboardTab UI
+2025-08-28 12:09:03,035 [DEBUG] Setting up UI layouts and widgets
+2025-08-28 12:09:03,038 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-08-28 12:09:03,039 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-08-28 12:09:03,041 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-08-28 12:09:25,001 [INFO] Export module started
+2025-08-28 12:09:25,005 [INFO] Import module started
+2025-08-28 12:09:25,101 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-08-28 12:09:25,116 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-08-28 12:09:26,772 [INFO] Application started
+2025-08-28 12:09:26,802 [INFO] Initializing DashboardTab UI
+2025-08-28 12:09:26,803 [DEBUG] Setting up UI layouts and widgets
+2025-08-28 12:09:26,805 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-08-28 12:09:26,806 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-08-28 12:09:26,808 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-08-28 12:09:36,946 [INFO] Export module started
+2025-08-28 12:09:36,947 [INFO] Import module started
+2025-08-28 12:09:36,969 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-08-28 12:09:36,975 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-08-28 12:09:37,425 [INFO] Application started
+2025-08-28 12:09:37,453 [INFO] Initializing DashboardTab UI
+2025-08-28 12:09:37,453 [DEBUG] Setting up UI layouts and widgets
+2025-08-28 12:09:37,455 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-08-28 12:09:37,456 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-08-28 12:09:37,457 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-08-28 12:09:37,809 [INFO] UI initialization complete.
+2025-08-28 12:09:37,809 [INFO] Loading data from the database.
+2025-08-28 12:09:37,810 [DEBUG] Total items: 26
+2025-08-28 12:09:37,810 [DEBUG] Total value: $397,778.00
+2025-08-28 12:09:37,810 [DEBUG] Low stock items: 1
+2025-08-28 12:09:37,810 [INFO] Updating chart.
+2025-08-28 12:09:37,841 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-08-28 12:09:37,938 [INFO] Chart drawing complete.
+2025-08-28 12:09:37,938 [INFO] Updating recent activity table.
+2025-08-28 12:09:37,938 [INFO] Recent activity table updated.
+2025-08-28 12:09:37,939 [INFO] Data loaded and UI updated successfully.
+2025-08-28 12:09:37,957 [INFO] Loaded 26 rows from the database.
+2025-08-28 12:09:37,958 [DEBUG] Table widget updated with new data.
+2025-08-28 12:09:46,306 [INFO] Loaded 26 rows from the database.
+2025-08-28 12:09:46,327 [DEBUG] Table widget updated with new data.
+2025-08-28 12:09:52,048 [INFO] Applying filter 'g' to 26 rows.
+2025-08-28 12:09:52,050 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:52,344 [INFO] Applying filter 'gg' to 26 rows.
+2025-08-28 12:09:52,345 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:52,486 [INFO] Applying filter 'ggg' to 26 rows.
+2025-08-28 12:09:52,486 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:53,818 [INFO] Applying filter 'gg' to 26 rows.
+2025-08-28 12:09:53,818 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:53,994 [INFO] Applying filter 'g' to 26 rows.
+2025-08-28 12:09:53,994 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:54,135 [INFO] Applying filter '' to 26 rows.
+2025-08-28 12:09:54,136 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:55,390 [INFO] Applying filter '1' to 26 rows.
+2025-08-28 12:09:55,390 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:55,671 [INFO] Applying filter '12' to 26 rows.
+2025-08-28 12:09:55,672 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:55,798 [INFO] Applying filter '123' to 26 rows.
+2025-08-28 12:09:55,798 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:55,879 [INFO] Applying filter '1234' to 26 rows.
+2025-08-28 12:09:55,879 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:55,969 [INFO] Applying filter '12345' to 26 rows.
+2025-08-28 12:09:55,969 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:56,069 [INFO] Applying filter '123456' to 26 rows.
+2025-08-28 12:09:56,069 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:56,182 [INFO] Applying filter '1234567' to 26 rows.
+2025-08-28 12:09:56,182 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:56,291 [INFO] Applying filter '12345678' to 26 rows.
+2025-08-28 12:09:56,292 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:56,422 [INFO] Applying filter '123456789' to 26 rows.
+2025-08-28 12:09:56,422 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:57,320 [INFO] Applying filter '12345678' to 26 rows.
+2025-08-28 12:09:57,320 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:57,831 [INFO] Applying filter '1234567' to 26 rows.
+2025-08-28 12:09:57,832 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:57,861 [INFO] Applying filter '123456' to 26 rows.
+2025-08-28 12:09:57,862 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:57,894 [INFO] Applying filter '12345' to 26 rows.
+2025-08-28 12:09:57,895 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:57,922 [INFO] Applying filter '1234' to 26 rows.
+2025-08-28 12:09:57,923 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:57,953 [INFO] Applying filter '123' to 26 rows.
+2025-08-28 12:09:57,953 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:58,001 [INFO] Applying filter '12' to 26 rows.
+2025-08-28 12:09:58,002 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:58,031 [INFO] Applying filter '1' to 26 rows.
+2025-08-28 12:09:58,031 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:58,065 [INFO] Applying filter '' to 26 rows.
+2025-08-28 12:09:58,066 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:58,704 [INFO] Applying filter '1' to 26 rows.
+2025-08-28 12:09:58,704 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:58,874 [INFO] Applying filter '11' to 26 rows.
+2025-08-28 12:09:58,875 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:59,256 [INFO] Applying filter '112' to 26 rows.
+2025-08-28 12:09:59,257 [DEBUG] Filter applied successfully.
+2025-08-28 12:09:59,425 [INFO] Applying filter '1122' to 26 rows.
+2025-08-28 12:09:59,426 [DEBUG] Filter applied successfully.
+2025-08-28 12:10:00,823 [INFO] Applying filter '11222' to 26 rows.
+2025-08-28 12:10:00,823 [DEBUG] Filter applied successfully.
+2025-08-28 12:10:01,032 [INFO] Applying filter '112222' to 26 rows.
+2025-08-28 12:10:01,033 [DEBUG] Filter applied successfully.
+2025-08-28 12:10:01,214 [INFO] Applying filter '1122222' to 26 rows.
+2025-08-28 12:10:01,215 [DEBUG] Filter applied successfully.
+2025-08-28 12:10:01,444 [INFO] Applying filter '11222223' to 26 rows.
+2025-08-28 12:10:01,444 [DEBUG] Filter applied successfully.
+2025-08-28 12:10:01,623 [INFO] Applying filter '112222233' to 26 rows.
+2025-08-28 12:10:01,624 [DEBUG] Filter applied successfully.
+2025-08-28 12:14:01,175 [INFO] Adding a new item to the database.
+2025-08-28 12:14:01,178 [INFO] Connecting to the database for adding a new item.
+2025-08-28 12:14:01,179 [DEBUG] Existing names in database: ['Smartphone', 'Headphones', 'Smartwatch', 'Monitor', 'Keyboard', 'Mouse', 'External Hard Drive', 'Webcam', 'Wireless Charger', 'Flash Drive', 'Bluetooth Speaker', 'Projector', 'Digital Camera', 'Game Console', 'Smart Thermostat', 'Air Purifier', 'Electric Kettle', 'Hair Dryer', 'heelo', 'test', 'the bow', 'car', 'car', 'Car', 'TEST', 'kay']
+2025-08-28 12:14:01,190 [INFO] Item 'ee' added successfully.
+2025-08-28 12:14:06,721 [INFO] Fetching item with ID: rr
+2025-08-28 12:14:06,740 [WARNING] No item found with ID: rr
+2025-08-28 12:14:10,538 [INFO] Loaded 27 rows from the database.
+2025-08-28 12:14:10,540 [DEBUG] Table widget updated with new data.
+2025-08-28 12:14:13,079 [INFO] Loaded 27 rows from the database.
+2025-08-28 12:14:13,080 [DEBUG] Table widget updated with new data.
