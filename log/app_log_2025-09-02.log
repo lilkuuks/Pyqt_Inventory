@@ -327,3 +327,26 @@
 2025-09-02 14:01:21,453 [DEBUG] Table widget updated with new data.
 2025-09-02 14:01:22,138 [INFO] Loaded 32 rows from the database.
 2025-09-02 14:01:22,140 [DEBUG] Table widget updated with new data.
+2025-09-02 14:17:49,475 [INFO] Export module started
+2025-09-02 14:17:49,476 [INFO] Import module started
+2025-09-02 14:17:49,485 [DEBUG] CACHEDIR=C:\Users\lilku\.matplotlib
+2025-09-02 14:17:49,487 [DEBUG] Using fontManager instance from C:\Users\lilku\.matplotlib\fontlist-v390.json
+2025-09-02 14:17:49,613 [INFO] Application started
+2025-09-02 14:17:49,661 [INFO] Initializing DashboardTab UI
+2025-09-02 14:17:49,661 [DEBUG] Setting up UI layouts and widgets
+2025-09-02 14:17:49,662 [DEBUG] Metric card 'Total Items' created with initial value '0'.
+2025-09-02 14:17:49,663 [DEBUG] Metric card 'Total Value' created with initial value '$0'.
+2025-09-02 14:17:49,663 [DEBUG] Metric card 'Low Stock Items' created with initial value '0'.
+2025-09-02 14:17:49,896 [INFO] UI initialization complete.
+2025-09-02 14:17:49,896 [INFO] Loading data from the database.
+2025-09-02 14:17:49,897 [DEBUG] Total items: 32
+2025-09-02 14:17:49,897 [DEBUG] Total value: $411,535.00
+2025-09-02 14:17:49,897 [DEBUG] Low stock items: 1
+2025-09-02 14:17:49,897 [INFO] Updating chart.
+2025-09-02 14:17:49,907 [DEBUG] Chart updated with data: [('Flash Drive', 300), ('Mouse', 220), ('Headphones', 200), ('Wireless Charger', 200), ('Hair Dryer', 200)]
+2025-09-02 14:17:49,936 [INFO] Chart drawing complete.
+2025-09-02 14:17:49,936 [INFO] Updating recent activity table.
+2025-09-02 14:17:49,936 [INFO] Recent activity table updated.
+2025-09-02 14:17:49,936 [INFO] Data loaded and UI updated successfully.
+2025-09-02 14:17:49,953 [INFO] Loaded 32 rows from the database.
+2025-09-02 14:17:49,953 [DEBUG] Table widget updated with new data.

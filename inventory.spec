@@ -31,6 +31,7 @@ exe = EXE(
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
+    icon='assets/inventory.ico',
     upx=True,
     console=True,   # set False if you don’t want a terminal window
 )
