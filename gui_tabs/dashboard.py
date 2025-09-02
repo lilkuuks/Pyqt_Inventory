@@ -24,7 +24,7 @@ logging.basicConfig(
     ]
 )
 logging.info("Application started")
-
+    
 class DashboardTab(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()

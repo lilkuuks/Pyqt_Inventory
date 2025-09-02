@@ -18,7 +18,7 @@ class Ui_Dialog(QMainWindow):
         """
         # Main window setup
         MainWindow.setObjectName("INVENTORY SYSTEM")
-        icon_path = "assets/icons/inventory.png"
+        icon_path = "../inventory_qml/assets/icons/inventory.png"
         MainWindow.setWindowIcon(QtGui.QIcon(icon_path))
 
         # Set initial window size (user can resize it)
