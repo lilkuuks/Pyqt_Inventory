@@ -6,15 +6,15 @@ venv/
 
 .idea/
 
-.log
+.log/
 
-.test center
+.test center/
 
-.vscode
+.vscode/
 
-.build
+.build/
 
-.controllers
+.controllers/
 
 
 
