@@ -214,7 +214,7 @@ class DashboardTab(QtWidgets.QWidget):
     def load_data(self):
         logging.info("Loading data from the database.")
         try:
-            conn = sqlite3.connect("database/inventory.db")
+            conn = sqlite3.connect("database/database.db")
             cursor = conn.cursor()
 
             # Total Items

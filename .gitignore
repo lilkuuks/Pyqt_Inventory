@@ -1,5 +1,25 @@
 .venv
 
+env/
+
+venv/
+
 .idea/
 
 .log/
+
+.test center/
+
+.vscode/
+
+.build/
+
+.controllers/
+
+.dist/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

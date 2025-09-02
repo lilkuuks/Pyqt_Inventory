@@ -39,7 +39,7 @@ def export_data():
 
         # Connect to the SQLite database
         logging.info("Connecting to the database.")
-        conn = sqlite3.connect("database/inventory.db")
+        conn = sqlite3.connect("database/database.db")
         query = "SELECT * FROM products"
         df = pd.read_sql_query(query, conn)
         conn.close()

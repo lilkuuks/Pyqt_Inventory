@@ -34,7 +34,7 @@ def import_data():
         if file_path:
             # Connect to the SQLite database
             logging.info("Connecting to the database.")
-            conn = sqlite3.connect("database/inventory.db")
+            conn = sqlite3.connect("database/database.db")
             cursor = conn.cursor()
 
             # Read the CSV file

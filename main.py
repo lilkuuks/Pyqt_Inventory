@@ -1,13 +1,14 @@
 import sys
 import re
-import sqlite3
 import logging
-import datetime
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QMessageBox
+from PyQt5.QtWidgets import QMainWindow
+from openpyxl.styles.builtins import total
+
 from utils.export_func import export_data
 from utils.import_func import import_data
 from gui_tabs.dashboard import DashboardTab
+from DatabaseManger import DatabaseManager
 
 
 class Ui_Dialog(QMainWindow):
@@ -18,7 +19,7 @@ class Ui_Dialog(QMainWindow):
         """
         # Main window setup
         MainWindow.setObjectName("INVENTORY SYSTEM")
-        icon_path = "../inventory_qml/assets/icons/inventory.png"
+        icon_path = "assets/inventory.png"
         MainWindow.setWindowIcon(QtGui.QIcon(icon_path))
 
         # Set initial window size (user can resize it)
@@ -296,25 +297,21 @@ class Ui_Dialog(QMainWindow):
             self.title.setText(_translate("Dialog", "INVENTORY MANAGEMENT"))
             self.refereshbtn.setText(_translate("Dialog", "Refresh"))
 
-
-
-            # Updating total count
+            # Update total count
             row_count = self.tableWidget.rowCount()
-            self.totalcount.setText(_translate("Dialog", "TOTAL ROW :"))
-            self.totalcountN.setText(_translate("Dialog", f"{row_count}"))
+            self.totalcount.setText(_translate("Dialog", f"Total Rows: {total_rows}"))
+            # self.totalcountN.setText(_translate("Dialog", str(row_count)))
 
     def load_data(self):
         """Load data from SQLite database and populate the table."""
         try:
-            connection = sqlite3.connect("database/inventory.db")
-            cursor = connection.cursor()
-            query = "SELECT * FROM products"
-            cursor.execute(query)
-            results = cursor.fetchall()
-            connection.close()
+            db_manager = DatabaseManager()
+            results = db_manager.load_products()
 
             # Log the number of rows loaded
             logging.info(f"Loaded {len(results)} rows from the database.")
+            global total_rows
+            total_rows = len(results)
 
             # Reset the table and insert new data
             self.tableWidget.setRowCount(0)
@@ -342,8 +339,9 @@ class Ui_Dialog(QMainWindow):
             logging.debug("Row %s data: ID=%s, Name=%s, Quantity=%s, Price=%s", row, item_id, item_name, quantity,
                           price)
 
-            # Update the database with the new values
-            connection = sqlite3.connect("database/inventory.db")
+            # Update the database with the new values using DatabaseManager
+            db_manager = DatabaseManager()
+            connection = db_manager.get_connection()
             cursor = connection.cursor()
             query = "UPDATE products SET name = ?, quantity = ?, price = ? WHERE id = ?"
             cursor.execute(query, (item_name, quantity, price, item_id))
@@ -359,19 +357,23 @@ class Ui_Dialog(QMainWindow):
             logging.error("Error updating row %s: %s", row, e)
             QtWidgets.QMessageBox.critical(self, "Error", str(e))
 
-
-
     def save_update(self, product_id, name, category, price, stock, dialog):
         """Save the updated product data to the database."""
         try:
             logging.info("Saving update for product ID: %s", product_id)
-            connection = sqlite3.connect("database/inventory.db")
+
+            # Use DatabaseManager for connection
+            db_manager = DatabaseManager()
+            connection = db_manager.get_connection()
             cursor = connection.cursor()
 
             # Update the product in the database
             cursor.execute(
                 """UPDATE products
-                   SET name = ?, category = ?, price = ?, stock = ?
+                   SET name     = ?,
+                       category = ?,
+                       price    = ?,
+                       quantity = ?
                    WHERE id = ?""",
                 (name, category, price, stock, product_id)
             )
@@ -385,7 +387,6 @@ class Ui_Dialog(QMainWindow):
         except Exception as e:
             logging.error("Error saving update for product ID %s: %s", product_id, e)
             QtWidgets.QMessageBox.critical(self, "Error", str(e))
-
 
     def update_filter(self, s):
         """Apply a filter to the table data based on the search string for ID and Name columns using regex."""
@@ -425,11 +426,13 @@ class Ui_Dialog(QMainWindow):
             QtWidgets.QMessageBox.warning(self, "Input Error", "Please enter an item ID.")
             return
 
-        conn = None
         try:
             logging.info("Fetching item with ID: %s", item_id)
-            conn = sqlite3.connect("./database/inventory.db")  # Ensure correct DB path
-            cursor = conn.cursor()
+
+            # Use DatabaseManager for connection
+            db_manager = DatabaseManager()
+            connection = db_manager.get_connection()
+            cursor = connection.cursor()
 
             cursor.execute("SELECT * FROM products WHERE id = ?", (item_id,))
             item_data = cursor.fetchone()
@@ -440,31 +443,30 @@ class Ui_Dialog(QMainWindow):
                 return
 
             logging.info("Item found: %s", item_data)
-            confirmation_dialog = QMessageBox(self)
-            confirmation_dialog.setIcon(QMessageBox.Question)
+            confirmation_dialog = QtWidgets.QMessageBox(self)
+            confirmation_dialog.setIcon(QtWidgets.QMessageBox.Question)
             confirmation_dialog.setWindowTitle("Confirm Deletion")
             confirmation_dialog.setText(f"Are you sure you want to delete this item?\n\n"
                                         f"ID: {item_data[0]}\n"
                                         f"Name: {item_data[1]}\n"
-                                        f"Quantity: {item_data[2]}\n"
-                                        f"Price: {item_data[3]}")
-            confirmation_dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-            confirmation_dialog.setDefaultButton(QMessageBox.No)
+                                        f"Quantity: {item_data[3]}\n"  # Fixed index based on your table structure
+                                        f"Price: {item_data[4]}")  # Fixed index based on your table structure
+            confirmation_dialog.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
+            confirmation_dialog.setDefaultButton(QtWidgets.QMessageBox.No)
 
-            if confirmation_dialog.exec_() == QMessageBox.Yes:
+            if confirmation_dialog.exec_() == QtWidgets.QMessageBox.Yes:
                 cursor.execute("DELETE FROM products WHERE id = ?", (item_id,))
-                conn.commit()
+                connection.commit()
                 logging.info("Item with ID %s deleted successfully.", item_id)
-                QMessageBox.information(self, "Success", "Item deleted successfully.")
+                QtWidgets.QMessageBox.information(self, "Success", "Item deleted successfully.")
                 self.lineEdit_delete_item.clear()
             else:
                 logging.info("Deletion cancelled by user for item ID %s.", item_id)
-        except sqlite3.Error as e:
+
+            connection.close()
+        except Exception as e:
             logging.error("Database error during deletion: %s", e)
-            QMessageBox.critical(self, "Database Error", f"An error occurred: {e}")
-        finally:
-            if conn:
-                conn.close()
+            QtWidgets.QMessageBox.critical(self, "Database Error", f"An error occurred: {e}")
 
     def add_item_to_database(self):
         """Add item data to the database."""
@@ -477,7 +479,7 @@ class Ui_Dialog(QMainWindow):
         # Validate input
         if not item_name or not item_quantity or not item_price:
             logging.warning("Input error: One or more fields are empty.")
-            QtWidgets.QMessageBox.warning(None, "Input Error", "Please fill in all fields.")
+            QtWidgets.QMessageBox.warning(self, "Input Error", "Please fill in all fields.")
             return
 
         try:
@@ -486,15 +488,17 @@ class Ui_Dialog(QMainWindow):
             item_price = float(item_price)
         except ValueError as e:
             logging.error("Conversion error: %s", e)
-            QtWidgets.QMessageBox.warning(None, "Input Error",
+            QtWidgets.QMessageBox.warning(self, "Input Error",
                                           "Quantity must be an integer and price must be a number.")
             return
 
-        conn = None
         try:
             logging.info("Connecting to the database for adding a new item.")
-            conn = sqlite3.connect("database/inventory.db")
-            cursor = conn.cursor()
+
+            # Use DatabaseManager for connection
+            db_manager = DatabaseManager()
+            connection = db_manager.get_connection()
+            cursor = connection.cursor()
 
             # Retrieve all existing item names from the database
             cursor.execute("SELECT name FROM products")
@@ -507,7 +511,7 @@ class Ui_Dialog(QMainWindow):
             )
             if duplicate_found:
                 logging.warning("Duplicate item detected: %s", item_name)
-                QtWidgets.QMessageBox.warning(None, "Duplicate Item",
+                QtWidgets.QMessageBox.warning(self, "Duplicate Item",
                                               "An item with this name already exists in the database.")
                 return
 
@@ -516,21 +520,19 @@ class Ui_Dialog(QMainWindow):
                 "INSERT INTO products (name, quantity, price) VALUES (?, ?, ?)",
                 (item_name, item_quantity, item_price)
             )
-            conn.commit()
+            connection.commit()
             logging.info("Item '%s' added successfully.", item_name)
 
             # Show confirmation dialog and clear input fields
-            QtWidgets.QMessageBox.information(None, "Success", "Item added successfully!")
+            QtWidgets.QMessageBox.information(self, "Success", "Item added successfully!")
             self.lineEdit_item_name.clear()
             self.lineEdit_item_quantity.clear()
             self.lineEdit_item_price.clear()
 
-        except sqlite3.Error as e:
+            connection.close()
+        except Exception as e:
             logging.error("Database error when adding item: %s", e)
-            QtWidgets.QMessageBox.critical(None, "Database Error", f"An error occurred: {e}")
-        finally:
-            if conn:
-                conn.close()
+            QtWidgets.QMessageBox.critical(self, "Database Error", f"An error occurred: {e}")
 
 
 if __name__ == "__main__":
