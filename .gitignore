@@ -16,6 +16,7 @@ test center/
 # Build directories
 build/
 *.spec
+utils/
 
 # Python cache files
 __pycache__/
