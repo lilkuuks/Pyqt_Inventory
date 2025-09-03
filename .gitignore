@@ -15,7 +15,6 @@ test center/
 
 # Build directories
 build/
-dist/
 *.spec
 
 # Python cache files
@@ -26,9 +25,10 @@ __pycache__/
 .Python
 *.so
 
-# Database files
-*.db
-*.sqlite3
+# Application directories
+controllers/
+gui_tabs/
+
 
 # Environment variables
 .env
