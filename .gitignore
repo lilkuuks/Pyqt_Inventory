@@ -1,25 +1,38 @@
-.venv
-
+# Virtual environments
+.venv/
 env/
-
 venv/
 
+# IDE settings
 .idea/
-
-.log/
-
-.test center/
-
 .vscode/
 
-.build/
+# Logs
+log/
 
-.controllers/
+# Test files
+test center/
 
+# Build directories
+build/
+dist/
+*.spec
 
-
-# Python cache
+# Python cache files
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+.Python
+*.so
+
+# Database files
+*.db
+*.sqlite3
+
+# Environment variables
+.env
+.env.local
+
+# Other
+.DS_Store
