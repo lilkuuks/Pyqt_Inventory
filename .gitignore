@@ -13,6 +13,9 @@ log/
 # Test files
 test center/
 
+# Database files
+*.db
+
 # Build directories
 build/
 *.spec
