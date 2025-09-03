@@ -131,6 +131,12 @@ class Ui_Dialog(QMainWindow):
         self.button_fetch_item.setObjectName("button_fetch_item")
         self.delete_item_layout.addWidget(self.button_fetch_item)
 
+        # Delete_item tab setup
+        # Delete item tab to tab widget
+        self.update_item = QtWidgets.QWidget()
+        self.delete_item.setObjectName("update_item")
+        self.tabWidget.addTab(self.update_item, "")
+
         # Spacer to push widgets to the top
         spacer_delete = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.delete_item_layout.addItem(spacer_delete)
@@ -287,6 +293,8 @@ class Ui_Dialog(QMainWindow):
 
 
             self.tabWidget.setTabText(self.tabWidget.indexOf(self.delete_item), _translate("Dialog", "DELETE ITEM"))
+
+            self.tabWidget.setTabText(self.tabWidget.indexOf(self.update_item), _translate("Dialog", "UPDATE ITEM"))
 
             # Set text for widgets in the Delete Item tab
             self.label_delete_item.setText(_translate("MainWindow", "Enter Item ID to Delete:"))

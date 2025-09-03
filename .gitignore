@@ -40,3 +40,4 @@ gui_tabs/
 
 # Other
 .DS_Store
+database/database.db
